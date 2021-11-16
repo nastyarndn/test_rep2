@@ -84,7 +84,7 @@ public class Test {
       }
 
       String myAnswer = sc.next();
-      if (myAnswer.equals(question[i].getRightAnswerForTest(A))) res++;
+      if (myAnswer.equals(question[i].getRightAnswerForTest())) res++;
     }
     System.out.println("Right answers: " + res);
   }
