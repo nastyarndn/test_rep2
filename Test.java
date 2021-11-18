@@ -22,15 +22,18 @@ public class Test {
     Answer answer1ForQuestion1 = new Answer();
     Answer answer2ForQuestion1 = new Answer();
     Answer answer3ForQuestion1 = new Answer();
+    Answer answer4ForQuestion1 = new Answer();
 
     answer1ForQuestion1.setAnswerForTest("A)8");
     answer2ForQuestion1.setAnswerForTest("B)9");
     answer3ForQuestion1.setAnswerForTest("C)6");
+    answer4ForQuestion1.setAnswerForTest("D)100");
 
-    Answer[] answer1 = new Answer[3];
+    Answer[] answer1 = new Answer[4];
     answer1[0] = answer1ForQuestion1;
     answer1[1] = answer2ForQuestion1;
     answer1[2] = answer3ForQuestion1;
+    answer1[3] = answer4ForQuestion1;
 
     question1.setAnswersForTest(answer1);
 
@@ -79,7 +82,7 @@ public class Test {
     for (int i = 0; i < questions.length; i++) {
       System.out.println(questions[i].getQuestionForTest());
 
-      for (int j = 0; j < questions.length; j++) {
+      for (int j = 0; j < questions[i].getAnswersLength(); j++) {
         System.out.println(questions[i].getAnswersForTest(j));
       }
 
