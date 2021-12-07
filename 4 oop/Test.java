@@ -14,23 +14,26 @@ public class Test {
     question2.setQuestionForTest("What is the range of an int?");
     question3.setQuestionForTest("Variable / constant names writing style");
 
-    Question[] question = new Question[3];
-    question[0] = question1;
-    question[1] = question2;
-    question[2] = question3;
+    Question[] questions = new Question[3];
+    questions[0] = question1;
+    questions[1] = question2;
+    questions[2] = question3;
 
     Answer answer1ForQuestion1 = new Answer();
     Answer answer2ForQuestion1 = new Answer();
     Answer answer3ForQuestion1 = new Answer();
+    Answer answer4ForQuestion1 = new Answer();
 
     answer1ForQuestion1.setAnswerForTest("A)8");
     answer2ForQuestion1.setAnswerForTest("B)9");
     answer3ForQuestion1.setAnswerForTest("C)6");
+    answer4ForQuestion1.setAnswerForTest("D)100");
 
-    Answer[] answer1 = new Answer[3];
+    Answer[] answer1 = new Answer[4];
     answer1[0] = answer1ForQuestion1;
     answer1[1] = answer2ForQuestion1;
     answer1[2] = answer3ForQuestion1;
+    answer1[3] = answer4ForQuestion1;
 
     question1.setAnswersForTest(answer1);
 
@@ -76,15 +79,15 @@ public class Test {
     question2.setRightAnswerForTest(rightAnswerQuestion2);
     question3.setRightAnswerForTest(rightAnswerQuestion3);
 
-    for (int i = 0; i < question.length; i++) {
-      System.out.println(question[i].getQuestionForTest());
+    for (int i = 0; i < questions.length; i++) {
+      System.out.println(questions[i].getQuestionForTest());
 
-      for (int j = 0; j < 3; j++) {
-        System.out.println(question[i].getAnswersForTest(j));
+      for (int j = 0; j < questions[i].getAnswersLength(); j++) {
+        System.out.println(questions[i].getAnswersForTest(j));
       }
 
       String myAnswer = sc.next();
-      if (myAnswer.equals(question[i].getRightAnswerForTest(A))) res++;
+      if (myAnswer.equals(questions[i].getRightAnswerForTest())) res++;
     }
     System.out.println("Right answers: " + res);
   }

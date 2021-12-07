@@ -29,4 +29,11 @@ class Question {
   public void setAnswersForTest(Answer[] answersForTest) {
     this.answersForTest = answersForTest;
   }
+
+  public int getAnswersLength () {
+    return answersForTest.length;
+  }
+
 }
+
+
