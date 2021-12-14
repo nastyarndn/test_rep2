@@ -12,10 +12,10 @@ public class HomeWork {
      */
   public static void main(String[] args) {
  
-    new DemoTest1().testDice1();
-    new DemoTest1().testDice2();
-    new DemoTest1().testDice3();
-    new DemoTest1().testGame1();
+    new DemoTest().testDiceResutForEqualsN1();;
+    new DemoTest().testDiceResutForZeroN2();
+    new DemoTest().testDiceResutForDiffN3();
+    new DemoTest().testDiceResutForCompareWinN4();
   
   }
 }
