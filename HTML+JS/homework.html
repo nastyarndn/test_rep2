@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Домашняя работа </title>
+
+  <style>
+    table {
+      font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+      font-size: 14px;
+      background: white;
+      max-width: 70%;
+      width: 70%;
+      border-collapse: collapse;
+      text-align: left;
+    }
+
+    th {
+      font-weight: normal;
+      color: #039;
+      border-bottom: 2px solid #6678b1;
+      padding: 10px 8px;
+    }
+
+    td {
+      color: #669;
+      padding: 9px 8px;
+      transition: .3s linear;
+    }
+
+    tr:hover td {
+      color: #6699ff;
+    }
+
+    h1,
+    h2,
+    h3,
+    span {
+      font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+      color: #039;
+    }
+
+    input,
+    option,
+    select {
+      font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+      font-size: 14px;
+      color: #039;
+
+      text-align: left;
+
+    }
+  </style>
+
+
+
+  <script>
+    function addRow() {
+      var fname = document.getElementById('fname').value;
+      var sex = document.getElementById('sex');
+      var strSex = sex.options[sex.selectedIndex].text;
+
+      var birthDate = document.getElementById('birthDate').value;
+      var age = getAge(birthDate);
+      var table = document.getElementById("myTable");
+
+      var newRow = table.insertRow(1);
+      var cel1 = newRow.insertCell(0);
+      var cel2 = newRow.insertCell(1);
+      var cel3 = newRow.insertCell(2);
+      var cel4 = newRow.insertCell(3);
+
+      cel1.innerHTML = fname;
+      cel2.innerHTML = strSex;
+      cel3.innerHTML = birthDate;
+      cel4.innerHTML = age;
+    }
+
+    function getAge(dateString) {
+      var today = new Date();
+      var birthDate = new Date(dateString);
+      var age = today.getFullYear() - birthDate.getFullYear();
+      var m = today.getMonth() - birthDate.getMonth();
+      if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
+        age--;
+      }
+      return age;
+    }
+
+
+    function calcAverage() {
+      var table = document.getElementById('myTable');
+      var count = 0;
+      var total = 0;
+      for (var i = 1; i < table.rows.length; i++) {
+        var num = Number(table.rows[i].cells[3].innerHTML);
+        total += num;
+        count++;
+      }
+      console.log(total / count);
+      document.getElementById("average").innerHTML = total / count;
+    }
+  </script>
+
+</head>
+
+<body>
+
+  <h3>Форма добавления информации о студентах</h3>
+
+  Имя студента: <input type="text" name="fname" id="fname" /><br /><br />
+  Пол: <select type="text" name="sex" id="sex">
+    <option value="1" selected="selected">женщина</option>
+    <option value="2">мужчина</option>
+  </select><br /><br />
+  Дата рождения: <input type="date" name="birthDate" id="birthDate" /><br /><br />
+  <button onclick="addRow();calcAverage()">Добавить</button><br /><br />
+
+
+  <table class="table" id="myTable">
+
+    <tr>
+      <th>Имя студента</th>
+      <th>Пол</th>
+      <th>Дата рождения</th>
+      <th>Возраст</th>
+
+    </tr>
+  </table>
+
+
+  <table class="table" id="myTableAvg">
+    <tr>
+      <th>Средний возраст</th>
+      <th></th>
+      <th></th>
+      <th>
+        <div id="average">
+        </div>
+      </th>
+    </tr>
+
+  </table>
+
+
+
+</body>
+
+</html>
