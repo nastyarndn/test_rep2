@@ -1,8 +1,16 @@
-class Analyzer {
+public class Analyzer {
 
     
     public static String getResult (long price, Form form, Sort sort) { 
         String res = "";
+        String zero = "";
+
+        if (price == 0) {
+            zero = "ноль " + Currency.getWord(price, form.getForm(0, 0), form.getForm(0, 1), form.getForm(0, 2));
+            return zero;
+        } 
+
+
         int level = Currency.getSegment(price).size()-1;
         
         for (int i= 0; i<Currency.getSegment(price).size(); i++ ) {

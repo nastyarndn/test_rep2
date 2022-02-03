@@ -1,6 +1,6 @@
-class Form {
+public class Form {
 
-  private String[][] form;
+  public String[][] form;
 
   public void setForm(String[][] form) {
     this.form = form;

@@ -3,9 +3,7 @@ import java.util.Scanner;
 public class PriceInWords {
 
   public static void main(String[] args) {
-
-    String zero = "";
-
+  
     Form form = new Form();
     String[][] arForForm = {
        
@@ -16,7 +14,6 @@ public class PriceInWords {
       { "триллион", "триллиона", "триллионов", "0" },
     };
     form.setForm(arForForm);
-
 
     Sort sort  = new Sort();
     String[][] txtOne = {
@@ -30,17 +27,12 @@ public class PriceInWords {
     sort.setTxtTen1(txtTen1);
     sort.setTxtHundred(txtHundred);
 
-
     Scanner scanner = new Scanner(System.in);
     System.out.println("Введите сумму: ");
     long price = scanner.nextLong();
     
-    if (price == 0) {
-        zero = "ноль " + Currency.getWord(price, form.getForm(0, 0), form.getForm(0, 1), form.getForm(0, 2));
-        System.out.println("Результат: "+ zero);
-    } 
-
-    System.out.println("Результат: "+ Analyzer.getResult(price, form, sort));
-
+    System.out.println("Результат для " + price+ " : " + Analyzer.getResult(price, form, sort));
+   
+   
   }
 }

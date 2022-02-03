@@ -1,4 +1,4 @@
-class Sort {
+public class Sort {
 
   private String[][] txtOne;
   private String[] txtTen;
