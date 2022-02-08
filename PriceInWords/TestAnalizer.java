@@ -1,12 +1,11 @@
 public class TestAnalizer {
 
 
-    public void testAnalizerForZeroN1() {
+    public void testAnalizerForZero() {
         String scenario = "N1. Тест числом 0";
-        AnalizerTest1 analizerTest = new AnalizerTest1();
         WorkData workData =new WorkData();
         try {   
-          String actual = analizerTest.getWords();
+          String actual = "ноль рублей";
           String  expected = workData.getResult(0);
           Assertions.assertEquals(actual,expected);
           System.out.printf("\"%s\" passed %n", scenario);
@@ -15,12 +14,11 @@ public class TestAnalizer {
         }
       }
 
-      public void testAnalizerForNegativeN2() {
+      public void testAnalizerForNegative() {
         String scenario = "N2. Тест с отрицательным числом";
-        AnalizerTest2 analizerTest = new AnalizerTest2();
         WorkData workData =new WorkData();
         try { 
-          String actual = analizerTest.getWords();
+          String actual = "отрицательное число";
           String  expected = workData.getResult(-5);
           Assertions.assertEquals(actual,expected);
           System.out.printf("\"%s\" passed %n", scenario);
@@ -29,12 +27,11 @@ public class TestAnalizer {
         }
       }
 
-      public void testAnalizerForSingleDigitsN3() {
+      public void testAnalizerForSingleDigits() {
         String scenario = "N3. Тест с однозначным числом (7) ";
-        AnalizerTest3 analizerTest = new AnalizerTest3();
         WorkData workData =new WorkData();
         try { 
-          String actual = analizerTest.getWords();
+          String actual = "семь рублей ";
           String  expected = workData.getResult(7);
           Assertions.assertEquals(actual,expected);
           System.out.printf("\"%s\" passed %n", scenario);
@@ -43,12 +40,11 @@ public class TestAnalizer {
         }
       }
 
-      public void testAnalizerForTwoDigitsN4() {
+      public void testAnalizerForTwoDigits() {
         String scenario = "N4. Тест с двухзначным числом (28) ";
-        AnalizerTest4 analizerTest = new AnalizerTest4();
         WorkData workData =new WorkData();
         try { 
-          String actual = analizerTest.getWords();
+          String actual = "двадцать восемь рублей ";
           String  expected = workData.getResult(28);
           Assertions.assertEquals(actual,expected);
           System.out.printf("\"%s\" passed %n", scenario);
@@ -57,12 +53,11 @@ public class TestAnalizer {
         }
       }
 
-      public void testAnalizerForThreeDigitsN5() {
+      public void testAnalizerForThreeDigits() {
         String scenario = "N5. Тест с трехзначным числом (561) ";
-        AnalizerTest5 analizerTest = new AnalizerTest5();
         WorkData workData =new WorkData();
         try { 
-          String actual = analizerTest.getWords();
+          String actual = "пятьсот шестьдесят один рубль ";
           String  expected = workData.getResult(561);
           Assertions.assertEquals(actual,expected);
           System.out.printf("\"%s\" passed %n", scenario);
@@ -71,12 +66,11 @@ public class TestAnalizer {
         }
       }
 
-      public void testAnalizerForFourDigitsN6() {
+      public void testAnalizerForFourDigits() {
         String scenario = "N6. Тест с четырехзначным числом (1093) ";
-        AnalizerTest6 analizerTest = new AnalizerTest6();
         WorkData workData =new WorkData();
         try { 
-          String actual = analizerTest.getWords();
+          String actual = "одна тысяча девяносто три рубля ";
           String  expected = workData.getResult(1093);
           Assertions.assertEquals(actual,expected);
           System.out.printf("\"%s\" passed %n", scenario);
@@ -85,12 +79,11 @@ public class TestAnalizer {
         }
       }
 
-      public void testAnalizerForSixDigitsN7() {
+      public void testAnalizerForSixDigits() {
         String scenario = "N7. Тест с шестизначным числом (542 193) ";
-        AnalizerTest7 analizerTest = new AnalizerTest7();
         WorkData workData =new WorkData();
         try { 
-          String actual = analizerTest.getWords();
+          String actual = "пятьсот сорок две тысячи сто девяносто три рубля ";
           String  expected = workData.getResult(542193);
           Assertions.assertEquals(actual,expected);
           System.out.printf("\"%s\" passed %n", scenario);
@@ -99,12 +92,11 @@ public class TestAnalizer {
         }
       }
 
-      public void testAnalizerForEightDigitsN8() {
+      public void testAnalizerForEightDigits() {
         String scenario = "N8. Тест с восьмизначным числом (71 033 128) ";
-        AnalizerTest8 analizerTest = new AnalizerTest8();
         WorkData workData =new WorkData();
         try { 
-          String actual = analizerTest.getWords();
+          String actual = "семьдесят один миллион тридцать три тысячи сто двадцать восемь рублей ";
           String  expected = workData.getResult(71033128);
           Assertions.assertEquals(actual,expected);
           System.out.printf("\"%s\" passed %n", scenario);

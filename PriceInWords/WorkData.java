@@ -1,28 +1,14 @@
-public class WorkData {
+public class WorkData  {
 
     public String getResult (long price) {
     Form form = new Form();
-    String[][] arForForm = {
-       
-      { "рубль", "рубля", "рублей", "0" },
-      { "тысяча", "тысячи", "тысяч", "1" },
-      { "миллион", "миллиона", "миллионов", "0" },
-      { "миллиард", "миллиарда", "миллиардов", "0" },
-      { "триллион", "триллиона", "триллионов", "0" },
-    };
-    form.setForm(arForForm);
+    form.setForm(Dictionary.DATA_FOR_FORM);
 
     Sort sort  = new Sort();
-    String[][] txtOne = {
-        {"","один","два","три","четыре","пять","шесть","семь","восемь","девять"},
-        {"","одна","две","три","четыре","пять","шесть","семь","восемь","девять"}};
-    String[] txtTen = {"","десять","двадцать","тридцать","сорок","пятьдесят","шестьдесят", "семьдесят","восемьдесят","девяносто"};
-    String[] txtTen1 = {"","десять","одиннадцать","двенадцать","тринадцать","четырнадцать", "пятнадцать","шестнадцать","семнадцать","восемнадцать","девятнадцать","двадцать"};
-    String[] txtHundred= {"","сто","двести","триста","четыреста","пятьсот","шестьсот","семьсот", "восемьсот","девятьсот"};
-    sort.setTxtOne(txtOne);
-    sort.setTxtTen(txtTen);
-    sort.setTxtTen1(txtTen1);
-    sort.setTxtHundred(txtHundred);
+    sort.setTxtOne(Dictionary.TXT_ONE);
+    sort.setTxtTen(Dictionary.TXT_TEN);
+    sort.setTxtTen1(Dictionary.TXT_TEN_1);
+    sort.setTxtHundred(Dictionary.TXT_HUNDRED);
 
    return new Analyzer().getResult(price, form, sort);
    

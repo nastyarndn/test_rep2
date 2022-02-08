@@ -12,7 +12,7 @@ public class Analyzer {
         } 
 
         if (price < 0) {
-            res = ("отрицательно число");
+            res = ("отрицательное число");
             return res;
         } 
 
