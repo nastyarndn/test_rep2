@@ -2,6 +2,7 @@ public class Analyzer {
 
     
     public static String getResult (long price, Form form, Sort sort) { 
+        
         String res = "";
         String zero = "";
 
@@ -10,6 +11,10 @@ public class Analyzer {
             return zero;
         } 
 
+        if (price < 0) {
+            res = ("отрицательно число");
+            return res;
+        } 
 
         int level = Currency.getSegment(price).size()-1;
         
